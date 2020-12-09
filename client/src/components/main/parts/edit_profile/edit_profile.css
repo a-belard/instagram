@@ -1,0 +1,95 @@
+div#editprofile_page {
+    background-color: white;
+    margin: 40px auto;
+    width: 40%;
+    border: 1px groove rgba(128, 128, 128, 0.144);
+    border-radius: 10px;
+    padding: 0 100px;
+}
+
+div#editprofile_page > div#profileInfo{
+    margin-top: -50px;
+    display: flex;
+    align-items: center;
+}
+
+div#editprofile_page > div#profileInfo > p{
+    margin-top: 20px;
+    font-size: 18px;
+    margin-left: -20px;
+    font-weight: normal;
+}
+
+div#editprofile_page > div#profileInfo > p >span:nth-of-type(2) label{
+    color: rgba(0, 119, 255, 0.973);
+    font-size: 17.5px !important;
+    cursor: pointer;
+}
+
+div#editprofile_page > div#profileInfo input{
+    display: none;
+}
+
+
+div#editprofile_page form {
+    margin-left: 5px;
+    margin-top: -25px;
+    font-size: 18px;
+}
+
+div#editprofile_page form label{
+    text-align: right;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin-right: 55px;
+}
+
+textarea {
+    display: inline;
+    height: 60px !important;
+    width: 300px !important;
+    overflow-y: auto;
+}
+
+div#editprofile_page form input, div#editprofile_page form textarea {
+    border: 1px groove rgba(128, 128, 128, 0.192);
+    width: 300px;
+    height: 25px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.692);
+}
+
+
+
+div#editprofile_page form input:focus, div#editprofile_page form textarea:focus {
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.247);
+}
+
+div#editprofile_page form input[type="submit"]{
+    margin-left: 155px;    
+    width: 150px;
+    height: 30px;
+    margin-bottom: 40px;
+    border: none;
+    background-color: rgb(135, 207, 240);
+    color: white;
+    cursor: pointer;
+}
+
+div#editprofile_page form input[type="submit"]:hover{
+    background-color: rgb(80, 198, 253);
+}
+
+span.error {
+    color: red;
+    font-size: 13px;
+    margin-left: 155px;
+    margin-top: -20px;
+    display: block;
+}
+
+

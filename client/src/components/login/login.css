@@ -1,0 +1,10 @@
+
+form.login_form {
+    padding-bottom: 100px !important;
+}
+
+#error {
+    color: red;
+    text-align: center;
+    margin: auto;
+}

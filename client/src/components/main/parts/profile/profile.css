@@ -1,0 +1,216 @@
+div#profile_content {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+img#prof_pic{
+    border-radius: 50%;
+    transform: scale(0.6);
+    width: 210px;
+    height: 210px;
+}
+
+div#info {
+    display: flex;
+}
+
+span#username {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgba(0, 0, 0, 0.849);
+    font-family: "Raleway Light";
+}
+
+
+div#inner_info{
+    margin-left: 60px;
+    margin-top: 40px;
+    padding-top: 5px;
+}
+
+div#inner_info > button{
+    margin-left: 50px;
+    position: absolute;
+    padding: 6px 10px;
+    display: inline;
+    color: rgba(0, 0, 0, 0.863);
+    font-family: "Raleway Semibold";
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    border-radius: 5px;
+    background-color: unset;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+div#inner_info > button:focus{
+    outline: none;
+}
+
+div#inner_info > p{
+    margin-top: 10px;
+}
+
+div#inner_info > p, span#followers_nbr, span#following_nbr{
+    font-family: "Raleway Semibold";
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.836);
+    margin-right: unset !important;
+}
+
+span#followers_nbr, span#following_nbr{
+    cursor: context-menu;
+    font-size: 20px !important;
+}
+
+div#inner_info > p > span {
+    margin-right: 55px;
+    font-family: "Raleway Medium";
+    font-size: 15px;
+    color: black;
+}
+
+span#followers_nbr:hover + span + div#followers_dropdown, span#following_nbr:hover + span + div#following_dropdown{
+    display: block;
+}
+
+span#followers_nbr + span:hover + div#followers_dropdown,span#following_nbr + span:hover + div#following_dropdown, span#likes_number:hover + div#following_dropdown{
+    display: block;
+}
+
+div#followers_dropdown, div#following_dropdown{
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 240px;
+    margin-top: -2px;
+    margin-left: 35px;
+    border: 1px solid #ddd;
+    z-index: 1;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.103);
+}
+
+div#followers_dropdown::-webkit-scrollbar,div#following_dropdown::-webkit-scrollbar{
+    width: 3px;
+}
+
+div#followers_dropdown:hover, div#following_dropdown:hover{
+   display: block; 
+}
+
+
+div#followers_dropdown > span, div#following_dropdown > span{
+    color: black;
+    padding: 12px 2px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 30px;
+    line-height: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+div#followers_dropdown span:hover, div#following_dropdown span:hover{
+    background-color:  rgba(128, 128, 128, 0.021);
+}
+
+div#followers_dropdown > span > span,div#following_dropdown > span > span{
+    margin-left: -25px;
+    color: rgba(0, 0, 0, 0.89);
+}
+
+div#followers_dropdown > span > span >span, div#following_dropdown > span > span >span{
+    color: rgba(0, 0, 0, 0.466);
+}
+
+div#followers_dropdown > span > span > button{
+    position: absolute;
+    margin-left: 45px;
+    text-align: center;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(31, 172, 219);
+    color: white;
+    font-weight: bold;
+}
+
+div#following_dropdown{
+    margin-left: 180px;
+}
+
+p#fullname {
+    font-size: 17px !important;
+    font-weight: unset;
+    margin-top: -10px !important;
+}
+
+p#bio {
+    font-size: 16px !important;
+    margin-top: -10px !important;
+    font-family: "Raleway Regular" !important;
+    width: 70% !important;
+}
+
+hr {
+    opacity: 0.5;
+}
+
+h5{
+    display: block;
+    width: 7%;
+    margin: auto;
+    margin-top: -10px;
+    text-align: center;
+    padding: 15px;
+    border-top: black 1px solid;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.795);
+}
+div#posts {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div.post_handler{
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+img.post_item{
+    cursor: pointer;
+}
+
+img.post_item:hover + p {
+    display: block;
+}
+
+p.post_details {
+    position: absolute;
+    display: none;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 270px !important;
+    height: 290px;
+    line-height: 300px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+p.post_details:hover {
+    display: block;
+}
+
+p.post_details span{
+    margin-right: 30px;
+    margin-left: 3px;
+}

@@ -1,0 +1,117 @@
+div.postcontainer {
+    background-color: white;
+    width: 600px;
+    margin: auto;
+    border: 1px groove rgba(128, 128, 128, 0.116);
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-top: 0px;
+}
+
+div.postcontainer > div.postcreator{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px groove rgba(128, 128, 128, 0.116);
+    padding: 0;
+    margin-bottom: -20px;
+    height:65px;
+    font-size: 15px;
+    font-weight: 550;
+    color: rgba(0, 0, 0, 0.842);
+}
+
+div.postcontainer > div.postcreator span{
+    margin-left: -12px;
+}
+
+div.postcontainer > div.postcreator span:hover, span.commentor:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+div.postcontainer > div.postinfo > div.postliking{
+    padding: 10px 15px;
+}
+
+div.postcontainer > div.postinfo i {
+    font-size: 23px;
+    margin-right: 15px;
+    color:  rgba(245, 37, 37, 0.589);
+}
+
+div.postcontainer > div.postinfo > div.postliking > span:nth-of-type(2) {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 3px;
+    display: block;
+    margin-top: 12px;
+    color: rgba(0, 0, 0, 0.842);
+}
+
+
+div.postcontainer > div.postinfo img{
+    width: 100%;
+    margin: auto;
+    white-space: wrap;
+    margin-top: 0px;
+}
+
+div.postcontainer > div.postinfo > div.postliking > span:nth-of-type(3), span.commentor {
+    font-size: 13px;
+    font-weight: 550;
+    color: rgba(26, 25, 25, 0.986);
+}
+
+span.lighter {
+    font-size: 14px;
+    font-weight: lighter !important;
+    color: rgba(0, 0, 0, 0.644);
+}
+
+span.hashtag {
+    color: rgb(32, 126, 250);
+}
+
+span.comments_number, span.postduration {
+    color: rgba(128, 128, 128, 0.753);
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+div.commentform {
+    border-top: 1px groove rgba(128, 128, 128, 0.116);
+}
+
+div.commentform input{
+    border: none;
+    background-color: unset;
+}
+
+div.commentform input:focus{
+    outline: none;
+}
+
+div.commentform input[type=text]{
+    width: 500px;
+    white-space: nowrap;
+    padding: 15px 20px;
+    color: rgba(0, 0, 0, 0.596);
+}
+
+div.commentform input[type=submit]{
+    color: dodgerblue;
+    opacity: 0.5;
+}
+
+div.commentform input[type=submit]:hover{
+    opacity: 1;
+    color: rgb(0, 195, 255);
+    cursor: pointer;
+}
+
+div.commentform ::-webkit-input-placeholder{
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+}
