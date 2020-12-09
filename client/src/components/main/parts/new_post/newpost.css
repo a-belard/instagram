@@ -4,5 +4,5 @@ div#new_post_div {
     height: 400px;
     margin: 30px auto;
     border: 1px groove rgba(128, 128, 128, 0.116);
-    border-radius: 9px;
+    border-radius: 10px;
 }
