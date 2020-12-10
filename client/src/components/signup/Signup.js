@@ -46,7 +46,7 @@ export default class Signup extends Component {
 
         await Axios.post('/signup',user)
         .then(result => {
-            localStorage.setItem("email",result.data.user)
+            localStorage.setItem("email",user.email)
             localStorage.setItem("page","profile")
             this.props.history.push("/main")
         })
@@ -64,7 +64,7 @@ export default class Signup extends Component {
         })
     } 
     render() {
-        if(localStorage!==""){
+        if(localStorage.email !== ""){
             return(<h1> </h1>)
         }
         else{
