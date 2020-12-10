@@ -34,7 +34,7 @@ export default class Main extends Component {
                 break
                 case "postInPreview": this.setState({page: <Post user={this.state.user}/>})
                 break
-                case "newpost": this.setState({page: <Newpost/>})
+                case "newpost": this.setState({page: <Newpost user={this.state.user}/>})
                 break
                 default: this.setState({page: <Home user={this.state.user}/>})
                 break

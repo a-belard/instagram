@@ -1,8 +1,98 @@
 div#new_post_div {
     background-color: white !important;
     width: 43%;
-    height: 400px;
+    height: 440px;
     margin: 30px auto;
     border: 1px groove rgba(128, 128, 128, 0.116);
     border-radius: 10px;
+    padding: 20px 40px;
 }
+
+div.image_container{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+
+div.image_container span{
+    color: dodgerblue;
+}
+div.imagecontainer{
+    border: 1px groove rgba(128, 128, 128, 0.116);
+    width: 100%;
+    height: 320px;
+    overflow: auto;
+}
+
+div.imagecontainer::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+
+div.imagecontainer::-webkit-scrollbar-thumb{
+    background-color: dodgerblue;
+}
+
+div.imagecontainer::-webkit-scrollbar-track{
+    background-color: gray;
+}
+
+div.image_container form input[type=file]{
+    display: none;
+}
+
+div.image_container form label{
+    float: right;
+    text-align: right;
+    padding: 3px 5px;
+    display: block;
+    border-radius: 2px;
+    background-color: rgba(30, 143, 255, 0.699);
+    color: white;
+    margin-top: 5px;
+}
+
+div.image_container form label:hover{
+    background-color: rgba(30, 143, 255, 0.911);
+    cursor: pointer;
+}
+
+div.image_container form input[type=text]{
+    display: block;
+    padding: 5px 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.767);
+    border: none;
+    width: 70%;
+}
+
+div.image_container form input[type=text]:focus, div.image_container form input[type=submit]:focus{
+    outline: none;
+}
+
+div.image_container form input[type=text]::-webkit-input-placeholder{
+    color: rgba(61, 61, 61, 0.534);
+}
+
+div.image_container form input[type=submit]{
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background-color: rgba(30, 143, 255, 0.877);
+    border-radius: 5px;
+}
+
+div.image_container form input[type=submit]:hover{
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+
+
+
+
+

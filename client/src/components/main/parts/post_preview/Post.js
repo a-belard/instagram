@@ -108,6 +108,20 @@ export default class Post extends Component {
         .catch(error => console.log(error.response.data.msg))
     }
 
+    descAvailable = () => {
+        if(this.state.post.desc !== ""){
+            return (
+                <div id="desc_container">
+                    <span className="commentor">{this.state.post.username} </span> 
+                    {this.state.post.desc && this.state.post.desc.split(" ").map(comm => {
+                        if(comm.charAt(0) === "#" || comm.charAt(0) === "@")
+                            return <span className="hashtag lighter">{comm} </span>
+                        return <span className="lighter">{comm} </span>
+                    })}
+                </div>
+            )
+        }
+    }
     render() {
         return (
             <div id="page_post_container">
@@ -120,6 +134,7 @@ export default class Post extends Component {
                             <span onClick={() => this.userRedirect(this.state.post.email)}>{this.state.post.username}</span>
                         </div>
                         <div id="comments_container">
+                            {this.descAvailable()}
                             {this.state.post.comments && this.state.post.comments.map(comment => (
                                 <span style={{display:"block"}}>
                                     <img src={this.state.profileImg} alt="" id={comment.id}/>

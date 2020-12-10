@@ -67,8 +67,12 @@ div#inner_post_info div.postcreator img{
     transform: 0.7 !important;
 }
 
+div#desc_container{
+    padding: 15px 20px 10px !important;
+}
+
 div#comments_container > span{
-    padding: 20px 20px 10px !important;
+    padding: 17px 20px 10px !important;
     font-size: 17px;
 }
 
