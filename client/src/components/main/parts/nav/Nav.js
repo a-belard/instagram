@@ -64,7 +64,11 @@ class Nav extends Component {
 
     toggleLogout = () => {
         this.profile_logout.style.display = "block"
-        setTimeout(() => this.profile_logout.style.display = "none",2000)
+        setTimeout(() => {
+            if(this.profile_logout){
+                this.profile_logout.style.display = "none"
+            }
+        },2000)
     }
     render() {
         return (
