@@ -122,6 +122,18 @@ export default class Post extends Component {
             )
         }
     }
+
+    commentorImage = async(id) => {
+        var image = ""
+        await Axios.post("/userbyid:"+id,{})
+        .then(response => image=response.data.url)
+        .catch(error => console.log(error.response.data.msg))
+        return (
+            <div>
+                {image && (<img src={image} alt=" "></img>)}
+            </div>
+        )
+    }
     render() {
         return (
             <div id="page_post_container">
@@ -137,7 +149,7 @@ export default class Post extends Component {
                             {this.descAvailable()}
                             {this.state.post.comments && this.state.post.comments.map(comment => (
                                 <span style={{display:"block"}}>
-                                    <img src={this.state.profileImg} alt="" id={comment.id}/>
+                                    {this.commentorImage(comment.id)}
                                     <span className="commentor" onClick={() => this.commentor(comment.id)}>{comment.username} </span> 
                                     {comment.comment && comment.comment.split(" ").map(comm => {
                                         if(comm.charAt(0) === "#" || comm.charAt(0) === "@")
