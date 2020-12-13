@@ -27,6 +27,8 @@ async function server(){
     app.use(require('./routes/get_routers/commentor.router'))
     app.use(require("./routes/get_routers/post.router"))
 
+    app.get('/', (req, res) => res.send('Hello from Express!'))
+
     //MONGODB connection 
     const uri = 'mongodb+srv://Belix:Belard2004@cluster0.v27v1.mongodb.net/?retryWrites=true&w=majority'
     await mongoose.connect(uri,{
