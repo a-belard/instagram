@@ -123,58 +123,83 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.posts && this.state.posts.map(post => {
-                    return(
-                        <div className="postcontainer">
-                            <div className="postcreator">
-                                <img src={post.userimage} alt="post creator profile" width="100" height="100" className="profile_avatar"/>
-                                <span onClick={() => this.userRedirect(post.email)}>{post.username}</span>
-                            </div>
-                            <br/>
-                            <div className="postinfo">
-                                <img src={post.url} alt="post info"/>
-                                <div className="postliking">
-                                    <span>
-                                        <i className={post.likes.some((like) => like.id === this.props.user._id) ? "fas fa-heart" : "far fa-heart"} onClick={this.likeUnlike} id={post._id}></i>
-                                        <i className={post.comments.some((comment) => comment.id === this.props.user._id) ? "fas fa-comment" : "far fa-comment"}></i>
-                                    </span><br/>
-                                    <span>{post.likes.length} likes</span><br/>
-                                    <span>
-                                        <span>{post.username} </span>
-                                        <span>{post.desc && post.desc.split(" ").map(desc => {
-                                            if(desc.charAt(0) === "#" || desc.charAt(0) === "@")
-                                                return <span className="hashtag lighter">{desc} </span>
-                                            return <span className="lighter">{desc} </span>
-                                        })}
-                                        </span>
-                                    </span> 
-                                    <br/>
-                                    <span className="comments_number" onClick={() => this.postRedirect(post._id)} style={{cursor:"pointer"}}>{post.comments.length > 4 ? `View all ${post.comments.length} comments`:""}</span>
-                                    <br/>
-                                    {post.comments && post.comments.slice(0,4).map(comment => (
-                                        <span style={{display:"block"}}>
-                                            <span className="commentor" onClick={() => this.commentor(comment.id)}>{comment.username} </span> 
-                                            {comment.comment && comment.comment.split(" ").map(comm => {
-                                                if(comm.charAt(0) === "#" || comm.charAt(0) === "@")
-                                                    return <span className="hashtag lighter">{comm} </span>
-                                                return <span className="lighter">{comm} </span>
+            <div id="homepage">
+                <div>
+                    {this.state.posts && this.state.posts.map(post => {
+                        return(
+                            <div className="postcontainer">
+                                <div className="postcreator">
+                                    <img src={post.userimage} alt="post creator profile" width="100" height="100" className="profile_avatar"/>
+                                    <span onClick={() => this.userRedirect(post.email)}>{post.username}</span>
+                                </div>
+                                <br/>
+                                <div className="postinfo">
+                                    <img src={post.url} alt="post info"/>
+                                    <div className="postliking">
+                                        <span>
+                                            <i className={post.likes.some((like) => like.id === this.props.user._id) ? "fas fa-heart" : "far fa-heart"} onClick={this.likeUnlike} id={post._id}></i>
+                                            <i className={post.comments.some((comment) => comment.id === this.props.user._id) ? "fas fa-comment" : "far fa-comment"}></i>
+                                        </span><br/>
+                                        <span>{post.likes.length} likes</span><br/>
+                                        <span>
+                                            <span>{post.username} </span>
+                                            <span>{post.desc && post.desc.split(" ").map(desc => {
+                                                if(desc.charAt(0) === "#" || desc.charAt(0) === "@")
+                                                    return <span className="hashtag lighter">{desc} </span>
+                                                return <span className="lighter">{desc} </span>
                                             })}
-                                        </span>
-                                    ))}
-                                    <br/>
-                                    <span className="postduration">{this.posttime(post.createdAt)}</span>
+                                            </span>
+                                        </span> 
+                                        <br/>
+                                        <span className="comments_number" onClick={() => this.postRedirect(post._id)} style={{cursor:"pointer"}}>{post.comments.length > 4 ? `View all ${post.comments.length} comments`:""}</span>
+                                        <br/>
+                                        {post.comments && post.comments.slice(0,4).map(comment => (
+                                            <span style={{display:"block"}}>
+                                                <span className="commentor" onClick={() => this.commentor(comment.id)}>{comment.username} </span> 
+                                                {comment.comment && comment.comment.split(" ").map(comm => {
+                                                    if(comm.charAt(0) === "#" || comm.charAt(0) === "@")
+                                                        return <span className="hashtag lighter">{comm} </span>
+                                                    return <span className="lighter">{comm} </span>
+                                                })}
+                                            </span>
+                                        ))}
+                                        <br/>
+                                        <span className="postduration">{this.posttime(post.createdAt)}</span>
+                                    </div>
+                                </div>
+                                <div className="commentform">
+                                    <form onSubmit={this.submitHandler} id={post._id}>
+                                        <input type="text" onChange={this.changeHandler} placeholder="Add a comment..." minLength="1"/>
+                                        <input type="submit" value="Post"/>
+                                    </form>
                                 </div>
                             </div>
-                            <div className="commentform">
-                                <form onSubmit={this.submitHandler} id={post._id}>
-                                    <input type="text" onChange={this.changeHandler} placeholder="Add a comment..." minLength="1"/>
-                                    <input type="submit" value="Post"/>
-                                </form>
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
+                <div>
+                    <h3>Powered By <span>Belix</span></h3>
+                    <span>
+                        <i className="fa fa-facebook-square"></i>
+                        <span>Belix Pro</span>
+                    </span>
+                    <span>
+                        <i className="fa fa-twitter-square"></i>
+                        <span>belix Pro</span>
+                    </span>
+                    <span>
+                        <i className="fa fa-whatsapp"></i>
+                        <span>0780578131</span>
+                    </span>
+                    <span>
+                        <i className="fa fa-youtube"></i>
+                        <span>Belix Pro</span>
+                    </span>
+                    <span>
+                        <i className="fa fa-google-plus-square"></i>
+                        <span>angebelard@gmail.com</span>
+                    </span>
+                </div>
             </div>
         )
     }

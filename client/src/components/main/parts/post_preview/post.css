@@ -69,6 +69,24 @@ div#inner_post_info div.postcreator img{
 
 div#desc_container{
     padding: 15px 20px 10px !important;
+    display: flex;
+    align-content: center;
+    text-align: center;
+}
+
+div#desc_container img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+div#desc_container > span {
+    margin-top: 8px;
+    margin-left: 3px;
+}
+
+div#desc_container > span:nth-of-type(1) {
+    margin-left: 8px;
 }
 
 div#comments_container > span{

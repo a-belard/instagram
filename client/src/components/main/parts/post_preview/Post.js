@@ -22,7 +22,7 @@ export default class Post extends Component {
             likes: []
         })
         await Axios.get("/post:"+localStorage.postInPreview)
-        .then(async response => this.setState({post: response.data}))
+        .then(response => this.setState({post: response.data}))
         .catch(error => console.log(error.response.data.msg))
         await this.getlikes()
     }
@@ -112,6 +112,7 @@ export default class Post extends Component {
         if(this.state.post.desc !== ""){
             return (
                 <div id="desc_container">
+                    <img src={this.state.post.userimage} alt=""/>
                     <span className="commentor">{this.state.post.username} </span> 
                     {this.state.post.desc && this.state.post.desc.split(" ").map(comm => {
                         if(comm.charAt(0) === "#" || comm.charAt(0) === "@")
@@ -123,17 +124,6 @@ export default class Post extends Component {
         }
     }
 
-    commentorImage = async(id) => {
-        var image = ""
-        await Axios.post("/userbyid:"+id,{})
-        .then(response => image=response.data.url)
-        .catch(error => console.log(error.response.data.msg))
-        return (
-            <div>
-                {image && (<img src={image} alt=" "></img>)}
-            </div>
-        )
-    }
     render() {
         return (
             <div id="page_post_container">
@@ -149,7 +139,6 @@ export default class Post extends Component {
                             {this.descAvailable()}
                             {this.state.post.comments && this.state.post.comments.map(comment => (
                                 <span style={{display:"block"}}>
-                                    {this.commentorImage(comment.id)}
                                     <span className="commentor" onClick={() => this.commentor(comment.id)}>{comment.username} </span> 
                                     {comment.comment && comment.comment.split(" ").map(comm => {
                                         if(comm.charAt(0) === "#" || comm.charAt(0) === "@")
