@@ -5,7 +5,7 @@ div#new_post_div {
     margin: 30px auto;
     border: 1px groove rgba(128, 128, 128, 0.116);
     border-radius: 10px;
-    padding: 20px 40px;
+    padding: 20px 40px 30px;
 }
 
 div.image_container{
