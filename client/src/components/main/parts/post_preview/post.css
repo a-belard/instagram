@@ -7,7 +7,9 @@ div#page_post_container{
     position: absolute;
     margin-left: -10px;
     display: flex;
-}       
+}  
+
+
 
 div#page_post_container > i {
     position: absolute;
