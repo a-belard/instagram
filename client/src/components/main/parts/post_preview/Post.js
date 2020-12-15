@@ -85,7 +85,6 @@ export default class Post extends Component {
         else{
             console.log()
         }
-        window.location.reload()
     }
 
     changeHandler = (e) => {
@@ -156,6 +155,7 @@ export default class Post extends Component {
                             {this.state.post.comments && (
                                 <i className={this.state.post.comments.some((comment) => comment.id === this.props.user._id) ? "fas fa-comment" : "far fa-comment"}></i>
                             )}
+                            <span>{this.state.post.email === localStorage.email ? "Delete" : ""}</span>
                         </span><br/>
                         {this.state.likes && (
                             this.state.likes.length !== 0 ? 

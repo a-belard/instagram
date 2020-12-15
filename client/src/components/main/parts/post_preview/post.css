@@ -121,6 +121,22 @@ div#inner_post_info > span i {
     color: rgba(245, 37, 37, 0.589);
 }
 
+div#inner_post_info > span > span{
+    font-size: 15px;
+    float: right;
+    margin-right: 30px;
+    background-color:  rgba(245, 37, 37, 0.678);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+div#inner_post_info > span > span:hover{
+    background-color:  rgba(245, 37, 37, 0.753);
+    cursor: pointer;
+}
+
 div#inner_post_info > span i:nth-of-type(1) {
     margin-left: 20px;
 }
