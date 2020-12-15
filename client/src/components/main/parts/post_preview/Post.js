@@ -123,6 +123,12 @@ export default class Post extends Component {
         }
     }
 
+    delpost = async() => {
+        await Axios.delete("/delete:"+localStorage.postInPreview)
+        .then(() => this.closeModal())
+        .catch(error => console.log(error.response.data.msg))
+    }
+
     render() {
         return (
             <div id="page_post_container">
@@ -155,7 +161,7 @@ export default class Post extends Component {
                             {this.state.post.comments && (
                                 <i className={this.state.post.comments.some((comment) => comment.id === this.props.user._id) ? "fas fa-comment" : "far fa-comment"}></i>
                             )}
-                            <span>{this.state.post.email === localStorage.email ? "Delete" : ""}</span>
+                            <span onClick={this.delpost}>{this.state.post.email === localStorage.email ? "Delete" : ""}</span>
                         </span><br/>
                         {this.state.likes && (
                             this.state.likes.length !== 0 ? 
