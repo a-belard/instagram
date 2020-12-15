@@ -1,5 +1,6 @@
 const Post = require('../../models/post.model')
 const cloudinary = require('../../utils/cloudinary')
+const User = require("./../../models/user.model")
 const router = require('express').Router()
 
 router.delete("/delete:id", async(req,res) => {
