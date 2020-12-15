@@ -129,6 +129,12 @@ export default class Post extends Component {
         .catch(error => console.log(error.response.data.msg))
     }
 
+    isMyPost = () => {
+        if(this.state.post.email === localStorage.email)
+            return <span onClick={this.delpost}>Delete</span>
+        return ""
+    }
+
     render() {
         return (
             <div id="page_post_container">
@@ -161,7 +167,7 @@ export default class Post extends Component {
                             {this.state.post.comments && (
                                 <i className={this.state.post.comments.some((comment) => comment.id === this.props.user._id) ? "fas fa-comment" : "far fa-comment"}></i>
                             )}
-                            <span onClick={this.delpost}>{this.state.post.email === localStorage.email ? "Delete" : ""}</span>
+                            {this.isMyPost()}
                         </span><br/>
                         {this.state.likes && (
                             this.state.likes.length !== 0 ? 

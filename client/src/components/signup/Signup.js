@@ -16,7 +16,7 @@ export default class Signup extends Component {
     }
 
     componentDidMount(){
-        if(localStorage.email !== ""){
+        if(!!localStorage.email && localStorage.email !== ""){
             this.props.history.push("/main")
         }
     }
@@ -64,7 +64,7 @@ export default class Signup extends Component {
         })
     } 
     render() {
-        if(localStorage.email !== ""){
+        if(!!localStorage.email && localStorage.email !== ""){
             return(<h1> </h1>)
         }
         else{

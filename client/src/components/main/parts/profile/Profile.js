@@ -61,30 +61,36 @@ export default class Profile extends Component {
                             <button onClick={this.editprofile}>Edit Profile</button>
                             <br/>
                             <p>
-                                {this.props.user.posts} <span>posts</span> 
-                                <span id="followers_nbr">{this.props.user.followers.length}</span> <span>followers</span>
-                                <div id="followers_dropdown">
-                                    {this.state.followers && this.state.followers.map(follower => (
-                                        <span onClick={() => this.userRedirect(follower.email)}>
-                                            <img src={follower.url} alt="profile" width="100" height="100" className="profile_avatar"/>
-                                            <span>{follower.username}
-                                                <button>{this.state.following.includes({email: follower.email}) ? "Following":"Follow"}</button><br/>
-                                                <span>{follower.fullname}</span>
+                                <section>
+                                    {this.props.user.posts} <span>posts</span> 
+                                </section>
+                                <section>
+                                    <span id="followers_nbr">{this.props.user.followers.length}</span> <span>followers</span>
+                                    <div id="followers_dropdown">
+                                        {this.state.followers && this.state.followers.map(follower => (
+                                            <span onClick={() => this.userRedirect(follower.email)}>
+                                                <img src={follower.url} alt="profile" width="100" height="100" className="profile_avatar"/>
+                                                <span>{follower.username}
+                                                    <button>{this.state.following.includes({email: follower.email}) ? "Following":"Follow"}</button><br/>
+                                                    <span>{follower.fullname}</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    ))}
-                                </div>
-                                <span id="following_nbr">{this.props.user.following.length}</span> <span>following</span>
-                                <div id="following_dropdown">
-                                    {this.state.following && this.state.following.map(following => (
-                                        <span onClick={() => this.userRedirect(following.email)}>
-                                            <img src={following.url} alt="profile" width="100" height="100" className="profile_avatar"/>
-                                            <span>{following.username}<br/>
-                                                <span>{following.fullname}</span>
+                                        ))}
+                                    </div>
+                                </section>
+                                <section>
+                                    <span id="following_nbr">{this.props.user.following.length}</span> <span>following</span>
+                                    <div id="following_dropdown">
+                                        {this.state.following && this.state.following.map(following => (
+                                            <span onClick={() => this.userRedirect(following.email)}>
+                                                <img src={following.url} alt="profile" width="100" height="100" className="profile_avatar"/>
+                                                <span>{following.username}<br/>
+                                                    <span>{following.fullname}</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
+                                </section>
                             </p>
                             <br/>
                             <p id="fullname">{this.props.user.fullname}</p>

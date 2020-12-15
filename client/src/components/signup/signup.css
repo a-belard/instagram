@@ -119,7 +119,54 @@ p#developer {
         margin-top: 60px;
         margin-right: 70px;
     }
-    
+    div#new_post_div {
+        width: 80%;
+    }
+
+    div#profile_content {
+        width: 90%;
+    }
+
+    img#prof_pic{
+        width: 100px;
+        height: 100px;
+        margin-top: 40px;
+    }
+
+    div#inner_info{
+        margin-left: 40px;
+    }
+    div#inner_info > button{
+        display: block;
+        margin-left: 0px;
+        margin-top: 10px;
+        padding: 7px 50px;
+    }
+    div#inner_info > p {
+        display: block;
+        top: 35px;
+        left: -5px;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    div#inner_info > p > section > span {
+        margin-right: 10px;
+    }
+
+    div#inner_info > p > section{
+        display: inline;
+    }
+
+    div.post_handler{
+        display: flex;
+        align-items: center;
+        margin: 10px 0px;
+    }
+
+    div.post_handler{
+        margin: 10px 0;
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -149,7 +196,7 @@ p#developer {
         background-color: unset;
         padding: 0;
      }     
-     div#inner_post_container > img{
+    div#inner_post_container > img{
         width: 100%;
         height: 100%;
         float: unset;
@@ -159,6 +206,26 @@ p#developer {
         width: 100%;
         float: unset;
     }    
+    div#homepage >div:nth-of-type(2) {
+        display: none;
+    }
+    div#homepage {
+        width: 100%;
+    }
+    div#editprofile_page {
+        padding: 0;
+        width: 90%;
+    }
+    div#editprofile_page form label{
+        margin-right: 10px;
+        font-size: 13px;
+    }
+    div#editprofile_page form input, div#editprofile_page form textarea {
+        width: 170px;
+    }
+    div#editprofile_page form textarea{
+        width: 170px !important;
+    }
 }
 
 

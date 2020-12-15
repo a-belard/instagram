@@ -6,9 +6,9 @@ div#profile_content {
 
 img#prof_pic{
     border-radius: 50%;
-    transform: scale(0.6);
-    width: 210px;
-    height: 210px;
+    width: 180px;
+    height: 180px;
+    margin-top: 25px;
 }
 
 div#info {
@@ -63,7 +63,11 @@ span#followers_nbr, span#following_nbr{
     font-size: 20px !important;
 }
 
-div#inner_info > p > span {
+div#inner_info > p > section{
+    display: inline;
+}
+
+div#inner_info > p > section > span {
     margin-right: 55px;
     font-family: "Raleway Medium";
     font-size: 15px;
