@@ -53,6 +53,8 @@ export default class Profile extends Component {
     }
 
     follow_unfollow = async(e) => {
+        this.follow_unfollow_btn.disabled = true
+        this.follow_unfollow_btn.style.opacity = 0.8
         var data = {email: this.state.user.email}
         if(this.state.follow_unfollow==="Follow"){
             await Axios.post("/follow:"+this.props.user._id,data)
@@ -69,6 +71,8 @@ export default class Profile extends Component {
             .catch(error => console.log(error.response.data.msg))
         }
         this.update()
+        this.follow_unfollow_btn.style.opacity = 1
+        this.follow_unfollow_btn.disabled = false
     }
 
     follow = async() => {
@@ -93,35 +97,41 @@ export default class Profile extends Component {
             <div>
                 <div id="profile_content">
                     <div id="info">
-                        <img src={this.state.user.url} alt="profile" id="prof_pic"/>
+                        <img src={this.state.user.url} alt="" id="prof_pic"/>
                         <div id="inner_info">
                             <span id="username">{this.state.user.username}</span>
-                            <button onClick={this.follow_unfollow} id="follow_unfollow_btn">{this.state.follow_unfollow}</button>
+                            <button onClick={this.follow_unfollow} id="follow_unfollow_btn" ref={ref => this.follow_unfollow_btn = ref}>{this.state.follow_unfollow}</button>
                             <br/>
                             <p>
-                                {this.state.user.posts} <span>posts</span> 
-                                <span id="followers_nbr">{this.state.followers.length}</span> <span>followers</span>
-                                <div id="followers_dropdown">
-                                    {this.state.followers && this.state.followers.map(follower => (
-                                        <span onClick={() => this.userRedirect(follower.email)}>
-                                            <img src={follower.url} alt="profile" width="100" height="100" className="profile_avatar"/>
-                                            <span>{follower.username}<br/>
-                                                <span>{follower.fullname}</span>
+                                <section>
+                                    {this.state.user.posts} <span>posts</span> 
+                                </section>
+                                <section>
+                                    <span id="followers_nbr">{this.state.followers.length}</span> <span>followers</span>
+                                    <div id="followers_dropdown">
+                                        {this.state.followers && this.state.followers.map(follower => (
+                                            <span onClick={() => this.userRedirect(follower.email)}>
+                                                <img src={follower.url} alt="" width="100" height="100" className="profile_avatar"/>
+                                                <span>{follower.username}<br/>
+                                                    <span>{follower.fullname}</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    ))}
-                                </div>
-                                <span id="following_nbr">{this.state.following.length}</span> <span>following</span>
-                                <div id="following_dropdown">
-                                    {this.state.following && this.state.following.map(following => (
-                                        <span onClick={() => this.userRedirect(following.email)}>
-                                            <img src={following.url} alt="profile" width="100" height="100" className="profile_avatar"/>
-                                            <span>{following.username}<br/>
-                                                <span>{following.fullname}</span>
+                                        ))}
+                                    </div>
+                                </section>
+                                <section>
+                                    <span id="following_nbr">{this.state.following.length}</span> <span>following</span>
+                                    <div id="following_dropdown">
+                                        {this.state.following && this.state.following.map(following => (
+                                            <span onClick={() => this.userRedirect(following.email)}>
+                                                <img src={following.url} alt="" width="100" height="100" className="profile_avatar"/>
+                                                <span>{following.username}<br/>
+                                                    <span>{following.fullname}</span>
+                                                </span>
                                             </span>
-                                        </span>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
+                                </section>
                             </p>
                             <br/>
                             <p id="fullname">{this.state.user.fullname}</p>
@@ -134,7 +144,7 @@ export default class Profile extends Component {
                     <div id="posts">
                         {this.state.posts && this.state.posts.map(post => (
                             <div className="post_handler" onClick={() => this.postRedirect(post._id)}>
-                                <img src={post.url} alt="me" width="290" height="290" className="post_item"/>
+                                <img src={post.url} alt="" width="290" height="290" className="post_item"/>
                                 <p className="post_details">
                                     <i className="fas fa-heart"></i>
                                     <span>{post.likes.length}</span>

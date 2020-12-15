@@ -103,7 +103,7 @@ class Nav extends Component {
                     </div>
                     <div id="nav_btns">
                         <i className="fa fa-home" id="home" onClick={this.contentHandler} style={localStorage.page ==="home" ? {color:"rgba(0,0,0,0.8)"}:{}}></i>
-                        <i class="fas fa-plus-square" id="newpost" style={{fontSize:"20px"}} onClick={this.contentHandler}></i>
+                        <i className="fas fa-plus-square" id="newpost" style={{fontSize:"20px"}} onClick={this.contentHandler}></i>
                         <i className="fa fa-heart"></i>
                         <i><img src={this.props.profilePic} alt="profile" width="100" height="100" id="profile" onClick={this.toggleLogout}/></i>
                         <div id="profile_logout" ref={ref => this.profile_logout = ref}>
