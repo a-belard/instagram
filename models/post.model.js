@@ -6,7 +6,6 @@ const postSchema = new mongoose.Schema({
     url: {type: String},
     username: {type: String},
     userimage: {type:String},
-    public_id: {type: String},
     type: {type: String},
     desc: {type:String},
     bytes: {type:Number},
