@@ -13,7 +13,7 @@ export default class Login extends Component {
     }
 
     componentDidMount(){
-        if(localStorage.email !== ""){
+        if(!!localStorage.email && localStorage.email !== ""){
             this.props.history.push("/main")
         }
     }
@@ -39,7 +39,7 @@ export default class Login extends Component {
         .catch(error => this.setState({error: <span id="error">{error.response.data.msg}</span>}))
     }
     render() {
-        if(localStorage.email !== ""){
+        if(!!localStorage.email && localStorage.email !== ""){
             return(<h1> </h1>)
         }
         else{

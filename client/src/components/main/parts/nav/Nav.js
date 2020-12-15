@@ -48,6 +48,8 @@ class Nav extends Component {
     }
     logout = () => {
         localStorage.setItem("email","")
+        localStorage.setItem("userInPreview","")
+        localStorage.setItem("postInPreview","")
         this.props.history.push("/")
     }
     userRedirect = (email) => {
