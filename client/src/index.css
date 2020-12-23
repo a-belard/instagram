@@ -1,6 +1,6 @@
 body {
     background-color: rgba(128, 128, 128, 0.041);
-    font-family: "Raleway_Medium",sans-serif;
+    font-family: "Raleway_Medium","Arial",sans-serif;
 }
 ::-webkit-scrollbar {
     width: 10px;
