@@ -19,7 +19,7 @@ export default class Home extends Component {
     update = async () => {
         this.setState({posts: []})
         for(var following of this.state.following){
-            await Axios.get(`/posts:${follower.email}`)
+            await Axios.get(`/posts:${following.email}`)
             .then(async response => this.setState({posts: this.state.posts.concat(response.data)}))
         }
         this.setState({posts: this.state.posts.sort((a,b) => {
