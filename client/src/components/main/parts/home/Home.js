@@ -6,19 +6,19 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            followers: [],
+            following: [],
             posts: [],
             comment: ""
         }
     }
     async componentDidMount(){
-        await Axios.get("/followers:"+this.props.user._id)
-        .then(response => this.setState({followers: response.data}))
+        await Axios.get("/following:"+this.props.user._id)
+        .then(response => this.setState({following: response.data}))
         await this.update()
     }
     update = async () => {
         this.setState({posts: []})
-        for(var follower of this.state.followers){
+        for(var following of this.state.following){
             await Axios.get(`/posts:${follower.email}`)
             .then(async response => this.setState({posts: this.state.posts.concat(response.data)}))
         }
