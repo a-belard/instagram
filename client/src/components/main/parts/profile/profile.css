@@ -19,7 +19,7 @@ span#username {
     font-size: 25px;
     font-weight: lighter;
     color: rgba(0, 0, 0, 0.849);
-    font-family: "Raleway Light";
+    font-family: "Raleway Light",Arial, Helvetica, sans-serif;
 }
 
 
@@ -35,7 +35,7 @@ div#inner_info > button{
     padding: 6px 10px;
     display: inline;
     color: rgba(0, 0, 0, 0.863);
-    font-family: "Raleway Semibold";
+    font-family: "Raleway Semibold",Arial, Helvetica, sans-serif;
     border: 1px solid rgba(0, 0, 0, 0.164);
     border-radius: 5px;
     background-color: unset;
@@ -52,7 +52,7 @@ div#inner_info > p{
 }
 
 div#inner_info > p, span#followers_nbr, span#following_nbr{
-    font-family: "Raleway Semibold";
+    font-family: "Raleway Semibold",Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: rgba(0, 0, 0, 0.836);
     margin-right: unset !important;
@@ -69,7 +69,7 @@ div#inner_info > p > section{
 
 div#inner_info > p > section > span {
     margin-right: 55px;
-    font-family: "Raleway Medium";
+    font-family: "Raleway Medium"Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: black;
 }
@@ -157,7 +157,7 @@ p#fullname {
 p#bio {
     font-size: 16px !important;
     margin-top: -10px !important;
-    font-family: "Raleway Regular" !important;
+    font-family: "Raleway Regular",Arial, Helvetica, sans-serif !important;
     width: 70% !important;
 }
 
