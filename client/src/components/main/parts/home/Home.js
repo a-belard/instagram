@@ -61,7 +61,7 @@ export default class Home extends Component {
         var posttime = Date.UTC(postdate.getFullYear(),postdate.getMonth(),postdate.getDate())
         var diff = (todaytime-posttime)/1000
         if(diff<60){
-            return `${Math.floor(diff)} seconds ago`
+            return `${diff} seconds ago`
         }
         else if(diff>=60 && diff < 3600){
             return `${Math.floor(diff/60)} minutes ago`
